@@ -46,3 +46,6 @@ from calculations import *
 from calculations import fibonacci
 f3 = fibonacci.fibo(15)
 print(list(f3))
+
+
+print("=====================================")
