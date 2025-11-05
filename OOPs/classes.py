@@ -142,6 +142,7 @@ pc2 = Python_classes('Suman','Sindhura')
 print(f"Class Attributes for pc2: {pc2.company} and {pc2.url}")
 print(f"Instance Attributes for pc2: {pc2.name} and {pc2.trainer}")
 
+print("===================scenario1 output=========================")
 '''
 Scenario1: 
 Create a class blank account with attributes as account holder name,balance,account number.
@@ -150,3 +151,53 @@ withdrawal
 deposit
 transfer
 '''
+class bank_account:
+    # class attributes
+    bank_name = "Bank Of Maharashtra"
+    branch = "Pimple Saudagar"
+
+    def __init__(self,account_number,account_name,balance):
+        self.account_number = account_number
+        self.account_name = account_name
+        self.balance = balance
+        self.IFSC_code = 'BOM8900098'
+    
+    # Welcoming method
+    @classmethod
+    def greeting(cls):
+        print(f'Welcome to the {cls.bank_name} located at {cls.branch}.')
+    
+    def withdrawal(self,amount):
+        self.amount = amount
+        if self.amount<self.balance:
+            self.balance=self.balance-self.amount
+            print(f"{self.amount} is withdrawn succesfully")
+            return self.balance
+        else:
+            print(f'Insufficient balance {self.balance}')
+    def deposit(self,amount):
+        self.amount = amount
+        self.balance = self.balance+self.amount
+        print(f'Amount {self.amount} deposited successfully. Updated balance is {self.balance}')
+    
+    def transfer(self,acc_num,amount):
+        self.acc_num = acc_num
+        self.amount = amount
+        if self.amount < self.balance:
+            self.balance -= self.amount
+            print(f'Transfer successful from your account {self.account_number} to {self.acc_num}')
+        else:
+            print(f'Insufficient balance {self.balance}')
+    
+    @classmethod
+    def branch_info(cls):
+        print(f'Branch details are===> Branch Name:{cls.branch}')
+
+user1 = bank_account(7898787,'Suman',80000)
+user1.greeting()
+user1.branch_info()
+user1.deposit(7000)
+wth=user1.withdrawal(8000)
+print(f"Withdrawal output: {wth}")
+user1.transfer(2344523,500)
+
