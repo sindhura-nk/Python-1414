@@ -81,4 +81,72 @@ v2.truck(6)
 # you can also create methods that dont use instance attributes(i.e without using self).
 #  use @staticmethod decorator
 '''
+print("============11th nov==========")
+class Person:
+    # instance attributes
+    def __init__(self,name):
+        self.name = name
+    
+    @staticmethod
+    def greeting():
+        print(f'welcome to the session')
 
+    def info(self):
+        print(f'Person details are: {self.name}')
+
+p1 = Person('Raman')
+p1.greeting()
+p1.info()
+
+p2 = Person('Suman')
+print(p1.name,p2.name)
+
+
+# class attributes
+'''
+class class_name:
+    # class attributes
+    parameter1 = "abc"
+    parameter2 = "xyz
+
+    # to use the class attributes in methods, u can use @classmethod decorator
+    @classmethod
+    def method1(cls): # pass cls as the input parameter
+        pass # to access class attributes, use cls.parameter1 or cls.parameter2
+'''
+
+class Python_classes:
+    # class attributes
+    company = '3RI'
+    url = 'https://www.3ritechnologies.com/'
+
+    # instance attributes
+    def __init__(self,name,trainer):
+        self.name = name
+        self.trainer = trainer
+    
+    # methods
+    def greeting(self):
+        print(f"Greetings from {self.trainer}: Welcome from to the session {self.name}")
+    
+    # to use class attributes in a method
+    @classmethod
+    def login_info(cls):
+        print(f'Welcome to {cls.company}. You can login using {cls.url}')
+
+pc1 = Python_classes('Raman','Sindhura')
+print(f"Class Attributes for pc1: {pc1.company} and {pc1.url}")
+print(f"Instance Attributes for pc1: {pc1.name} and {pc1.trainer}")
+
+pc2 = Python_classes('Suman','Sindhura')
+print(f"Class Attributes for pc2: {pc2.company} and {pc2.url}")
+print(f"Instance Attributes for pc2: {pc2.name} and {pc2.trainer}")
+
+'''
+Scenario1: 
+Create a class blank account with attributes as account holder name,balance,account number.
+Define below methods: 
+withdrawal
+deposit
+transfer
+'''
