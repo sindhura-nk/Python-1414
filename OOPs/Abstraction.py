@@ -16,6 +16,8 @@ class PaymentProcess(ABC):
     @abstractmethod
     def pay(self):
         print(f'Payment Initiated')
+    def greeting(self):
+        print(f'Welcome to the payment gateway')
 
 # predefine UPI'ids 
 upi_ids = ['945655556@hdfc','4555555@ramanICICI','678678678@hdfc']
@@ -30,6 +32,7 @@ class upi_payment(PaymentProcess):
         self.amount=amount
     
     def pay(self):
+        super().greeting()
         self.valid_upi_id()
     
     def valid_upi_id(self):
